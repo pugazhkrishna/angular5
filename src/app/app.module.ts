@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { ListEmployeesComponent } from './employees/list-employees.component';
 import { CreateEmployeesComponent } from './employees/create-employees.component';
 
+import { EmployeeService } from './employees/employees.service';
+import { DisplayEmployeeComponent } from './employees/display-employee.component';
+
 const appRoutes:Routes = [
   {
     path: 'list',
@@ -29,7 +32,9 @@ const appRoutes:Routes = [
   declarations: [
     AppComponent,
     ListEmployeesComponent,
-    CreateEmployeesComponent
+    CreateEmployeesComponent,
+    DisplayEmployeeComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,7 @@ const appRoutes:Routes = [
     BsDatepickerModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,7 @@
 import { Component, OnInit} from '@angular/core';
+import { Employee } from '../models/employee.model';
+import { EmployeeService } from '../employees/employees.service';
+import { Router } from '@angular/router'
 
 @Component({
     selector:'app-create-employees',
@@ -9,7 +12,22 @@ import { Component, OnInit} from '@angular/core';
 export class CreateEmployeesComponent implements OnInit {
 
     photoPreview : boolean = false;
-    constructor(){}
+    employee: Employee= {
+        id:null,
+        name:null,
+        gender:null,
+        email:null,
+        phoneNumber:null,
+        contactPreference:null,
+        dateOfBirth:null,
+        department:null,
+        isActive:null,
+        photoPath:null
+    }
+
+    constructor( private _employeeService: EmployeeService,
+                 private _route: Router
+                ){}
 
     ngOnInit(){
 
@@ -18,7 +36,8 @@ export class CreateEmployeesComponent implements OnInit {
     showPreview(){
         this.photoPreview=!this.photoPreview
     }
-    saveEmployee(empData):void{
-        console.log(empData.value)
+    saveEmployee():void{
+        this._employeeService.save(this.employee);
+        this._route.navigate(['list']);
     }
 }       

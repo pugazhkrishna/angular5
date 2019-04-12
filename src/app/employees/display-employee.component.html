@@ -1,0 +1,78 @@
+<div class="panel panel-primary" >
+  <div class="panel-heading">
+    <h3 class="panel-title">{{employeeAtr.name}}</h3>
+  </div>
+  <div class="panel-body">
+
+    <div class="col-md-10">
+
+      <div class="row vertical-align">
+
+        <div class="col-md-4">
+          <img class="imageClass" [src]="employeeAtr.photoPath" />
+        </div>
+        <div class="col-md-8">
+
+          <div class="row">
+            <div class="col-md-6">
+              Gender
+            </div>
+            <div class="col-md-6">
+              : {{employeeAtr.gender}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              Date of Birth
+            </div>
+            <div class="col-md-6">
+              : {{employeeAtr.dateOfBirth | date}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              Contact Preference
+            </div>
+            <div class="col-md-6">
+              : {{employeeAtr.contactPreference}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              Phone
+            </div>
+            <div class="col-md-6">
+              : {{employeeAtr.phoneNumber}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              Email
+            </div>
+            <div class="col-md-6">
+              : {{employeeAtr.email}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              Department
+            </div>
+            <div class="col-md-6">
+              : {{employeeAtr.department}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              Is Active
+            </div>
+            <div class="col-md-6">
+              : {{employeeAtr.isActive}}
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
